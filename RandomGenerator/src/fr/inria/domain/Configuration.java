@@ -25,16 +25,16 @@ import java.util.Map.Entry;
 
 public class Configuration {
 
-	public Map<String, Double> elements;
+	public Map<String, Number> elements;
 
 	public Configuration() {
-		this.elements = new HashMap<String, Double>();
+		this.elements = new HashMap<String, Number>();
 	}
 
 	
 	public String toString(){
 		String res="";
-		for(Entry<String,Double> e: elements.entrySet()){
+		for(Entry<String,Number> e: elements.entrySet()){
 			res+=e.getKey().toString()+ " = "+e.getValue().toString()+"\n";
 		}
 		return res;

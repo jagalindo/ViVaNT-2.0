@@ -10,12 +10,15 @@ import org.chocosolver.solver.Solver;
 import org.chocosolver.solver.constraints.Constraint;
 import org.chocosolver.solver.constraints.IntConstraintFactory;
 import org.chocosolver.solver.constraints.LogicalConstraintFactory;
+import org.chocosolver.solver.constraints.real.Ibex;
+import org.chocosolver.solver.constraints.real.RealConstraint;
 import org.chocosolver.solver.variables.BoolVar;
 import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.RealVar;
 import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.VariableFactory;
 
+import fr.inria.domain.Configuration;
 import fr.inria.reader.Node;
 
 public class Choco3MiniReasoner {
@@ -23,7 +26,7 @@ public class Choco3MiniReasoner {
 	public Map<String, Variable> atributes;
 	public Map<String, Variable> features;
 	public Collection<Constraint> constraints;
-
+	public double precision;
 	public Solver solver;
 
 	public Choco3MiniReasoner() {
@@ -33,7 +36,7 @@ public class Choco3MiniReasoner {
 		solver = new Solver();
 	}
 
-	public Variable addRealAtribute(String name, Double min, Double max, Double precision) {
+	public Variable addRealAtribute(String name, Double min, Double max) {
 		RealVar att = VariableFactory.real(name, min, max, precision, solver);
 		atributes.put(name, att);
 		return att;
@@ -72,71 +75,84 @@ public class Choco3MiniReasoner {
 	}
 
 	public Constraint addOrConstraint(Variable... parentAndchilds) {
-		int numberOfChilds = parentAndchilds.length-1;
-		IntVar[] childs =  new IntVar[numberOfChilds];
-		for(int i=1;i<parentAndchilds.length;i++){
-			childs[i-1]=(IntVar) parentAndchilds[i];
+		int numberOfChilds = parentAndchilds.length - 1;
+		IntVar[] childs = new IntVar[numberOfChilds];
+		for (int i = 1; i < parentAndchilds.length; i++) {
+			childs[i - 1] = (IntVar) parentAndchilds[i];
 		}
 		Variable parent = parentAndchilds[0];
-		Constraint res = LogicalConstraintFactory.ifThenElse_reifiable(IntConstraintFactory.arithm((IntVar) parent,"=",1),
-				IntConstraintFactory.sum( childs, "=", VariableFactory.fixed(1, solver)),
-				IntConstraintFactory.sum( childs, "=", VariableFactory.fixed(0, solver)));
+		Constraint res = LogicalConstraintFactory.ifThenElse_reifiable(
+				IntConstraintFactory.arithm((IntVar) parent, "=", 1),
+				IntConstraintFactory.sum(childs, "=", VariableFactory.fixed(1, solver)),
+				IntConstraintFactory.sum(childs, "=", VariableFactory.fixed(0, solver)));
 		this.constraints.add(res);
 		return res;
 
 	}
 
 	public Constraint addSetConstraint(Variable... parentAndchilds) {
-		int numberOfChilds = parentAndchilds.length-1;
-		IntVar[] childs =  new IntVar[numberOfChilds];
-		for(int i=1;i<parentAndchilds.length;i++){
-			childs[i-1]=(IntVar) parentAndchilds[i];
+		int numberOfChilds = parentAndchilds.length - 1;
+		IntVar[] childs = new IntVar[numberOfChilds];
+		for (int i = 1; i < parentAndchilds.length; i++) {
+			childs[i - 1] = (IntVar) parentAndchilds[i];
 		}
 		Variable parent = parentAndchilds[0];
-		Constraint res = LogicalConstraintFactory.ifThenElse_reifiable(IntConstraintFactory.arithm((IntVar) parent,"=",1),
-				IntConstraintFactory.sum( childs , "<=", VariableFactory.fixed(numberOfChilds, solver)),
-				IntConstraintFactory.sum( childs, "=", VariableFactory.fixed(0, solver)));
+		Constraint res = LogicalConstraintFactory.ifThenElse_reifiable(
+				IntConstraintFactory.arithm((IntVar) parent, "=", 1),
+				IntConstraintFactory.sum(childs, "<=", VariableFactory.fixed(numberOfChilds, solver)),
+				IntConstraintFactory.sum(childs, "=", VariableFactory.fixed(0, solver)));
 		this.constraints.add(res);
 		return res;
 
 	}
 
-	public void setConstraints(){
-		for(Constraint c: constraints){
+	public void setConstraints() {
+		for (Constraint c : constraints) {
 			solver.post(c);
 		}
 	}
+
 	public void addConstraint(Node<String> tree) {
 
 	}
 
-	public void allSolutions(){
-	
-		if(solver.findSolution()){
-			do{
+	public void allSolutions() {
+
+		if (solver.findSolution()) {
+			do {
 				Variable[] vars = solver.getVars();
-				for(Variable var: vars){
-					if(var instanceof IntVar){
-						System.out.println(((IntVar)var).getName()+"="+((IntVar)var).getValue());	
-					}else if(var instanceof RealVar){
-						System.out.println(((RealVar)var).getName()+"="+((RealVar)var).getLB()+"~"+((RealVar)var).getUB());	
+				for (Variable var : vars) {
+					if (var instanceof IntVar) {
+						System.out.println(((IntVar) var).getName() + "=" + ((IntVar) var).getValue());
+					} else if (var instanceof RealVar) {
+						System.out.println(((RealVar) var).getName() + "=" + ((RealVar) var).getLB() + "~"
+								+ ((RealVar) var).getUB());
 					}
-					
+
 				}
-			}while(solver.nextSolution());
+			} while (solver.nextSolution());
 		}
 	}
-	
-	public boolean isValidConf(Map<String,Number> configuration){
+
+	public boolean isValidConf(Configuration conf){
 		Collection<Constraint> tmpCons=new LinkedList<Constraint>();
 
-		for(Entry<String,Number> pareja:configuration.entrySet()){
+		for(Entry<String,Number> pareja:conf.elements.entrySet()){
 			Variable relatedVariable;
 			String key = pareja.getKey();
 			Number value = pareja.getValue();
 			if(key.contains(".")){
 				relatedVariable = atributes.get(key);
-				
+				Constraint c=null;
+				if(relatedVariable instanceof IntVar){
+					c=IntConstraintFactory.arithm((IntVar) relatedVariable,"=",((Double)value).intValue());
+					
+				}else if(relatedVariable instanceof RealVar){
+					RealVar real = VariableFactory.real("", ((Double)value).doubleValue(), ((Double)value).doubleValue(),precision,solver);
+					c = new RealConstraint("", "{0}={1}",Ibex.COMPO,(RealVar)relatedVariable,real);
+				}
+				tmpCons.add(c);
+				solver.post(c);
 			}else{
 				relatedVariable = features.get(key);
 				Constraint c=IntConstraintFactory.arithm((IntVar) relatedVariable,"=",(Integer)value);

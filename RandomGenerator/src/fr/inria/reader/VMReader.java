@@ -377,15 +377,18 @@ public class VMReader {
 	private void visitAttributes(EList<AttrDef> att) {
 
 		for (AttrDef atdef : att) {
-
 			if (!atdef.isNotTranslatable() || atdef.isRunTime()) {
 				BasicAttrDef at = atdef.getBasicAttrDef();
+				
 				if (at instanceof BooleanAttrDef) {
 					String attname = ((BooleanAttrDef) at).getName().getName();
+					String featname = ((BooleanAttrDef) at).getName().getHead().getOwnedFeature().getName();
 					Variable addBoolAtribute = reasoner.addBoolAtribute(attname);
-					reasoner.atributes.put(attname, addBoolAtribute);
+					reasoner.atributes.put(featname+'.'+attname, addBoolAtribute);
 				} else if (at instanceof IntegerAttrDefBounded) {
 					String name = ((IntegerAttrDefBounded) at).getName().getName();
+					String featname = ((IntegerAttrDefBounded) at).getName().getHead().getOwnedFeature().getName();
+
 					Integer max = null,min = null;
 					EList<IntegerAttrDefComplement> complements = ((IntegerAttrDefBounded) at).getComplements();
 					for (IntegerAttrDefComplement complement : complements) {
@@ -394,13 +397,17 @@ public class VMReader {
 					}
 					
 					Variable addIntegerAtribute = reasoner.addIntegerAtribute(name, min, max);
-					reasoner.atributes.put(name, addIntegerAtribute);
+					reasoner.atributes.put(featname+'.'+name, addIntegerAtribute);
 				} else if (at instanceof IntegerAttrDefUnbounded) {
 					String name = ((IntegerAttrDefUnbounded) at).getName().getName();
+					String featname = ((IntegerAttrDefUnbounded) at).getName().getHead().getOwnedFeature().getName();
+
 					Variable addIntegerAtribute = reasoner.addIntegerAtribute(name, Integer.MIN_VALUE, Integer.MAX_VALUE);
-					reasoner.atributes.put(name, addIntegerAtribute);
+					reasoner.atributes.put(featname+'.'+name, addIntegerAtribute);
 				} else if (at instanceof RealAttrDefBounded) {
 					String name = ((RealAttrDefBounded) at).getName().getName();
+					String featname = ((RealAttrDefBounded) at).getName().getHead().getOwnedFeature().getName();
+
 					EList<RealAttrDefComplement> complements = ((RealAttrDefBounded) at).getComplement();
 					Double max = null,min = null;
 					try{
@@ -408,12 +415,14 @@ public class VMReader {
 						max = Double.parseDouble(complement.getMax());
 						min = Double.parseDouble(complement.getMin());
 					}}catch(Exception e){System.out.println(name);}
-					Variable addRealAtribute = reasoner.addRealAtribute(name, min, max, 0.000001);
-					reasoner.atributes.put(name, addRealAtribute);
+					Variable addRealAtribute = reasoner.addRealAtribute(name, min, max);
+					reasoner.atributes.put(featname+'.'+name, addRealAtribute);
 				} else if (at instanceof RealAttrDefUnbounded) {
 					String name = ((RealAttrDefUnbounded) at).getName().getName();
-					Variable addRealAtribute = reasoner.addRealAtribute(name, Double.MIN_VALUE, Double.MAX_VALUE, 0.1);
-					reasoner.atributes.put(name, addRealAtribute);
+					String featname = ((RealAttrDefUnbounded) at).getName().getHead().getOwnedFeature().getName();
+
+					Variable addRealAtribute = reasoner.addRealAtribute(name, Double.MIN_VALUE, Double.MAX_VALUE);
+					reasoner.atributes.put(featname+'.'+name, addRealAtribute);
 				}
 
 				EnumAttrDef enumAttrDef = atdef.getEnumAttrDef();
