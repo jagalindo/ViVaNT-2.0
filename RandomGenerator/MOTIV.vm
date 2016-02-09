@@ -31,6 +31,9 @@ sequence {
 Attributes:
 
 //background
+int sequence.identifier [0..10] default 0 
+int sequence.comment [0..0] default 0 
+
 int background.identifier [0..0] default 0 
 
 //targets
@@ -111,34 +114,30 @@ real camera.vibration [0 .. 1]		delta 0.1 default 0
 real camera.focal_change [0 .. 1]	delta 0.1 default 0 
 real camera.pan_motion [0 .. 1]		delta 0.25 default 0 
 real camera.tilt_motion [0 .. 1] 	delta 0.25 default 0
-real camera.altitude [0 .. 1] 		delta 0.5 default 0 
+real camera.altitude [0 .. 5] 		delta 0.5 default 0 
 real capture.illumination_level [0 .. 1] default 0 delta 0.5
 real capture.shadow_level [0 .. 1] 	delta 0.1 default 0 
 real capture.global_light_change_level [0 .. 1] delta 0.1 default 0  
 real capture.local_light_change_level [0 .. 1] 	delta 0.1 default 0 
 real capture.heat_haze_level [0 .. 1] delta 0.25 default 0  
 real capture.fog_level [0 .. 1] delta 0.1
-// Signal quality
-//enum signal_quality.picture_size ['1920x180', '1280x768', '720x576', '640x480', '320x240'] default '1280x768'
+real capture.humidity_level [0 ..0] delta 0
 
-int signal_quality.picture_width [1280..1280]; 
-int signal_quality.picture_height [720..720]; 
+// Signal quality
+real signal_quality.picture_width [1280..1280] delta 0 default 0
+real signal_quality.picture_height [720..720] delta 0 default 0 
 real signal_quality.force_balance [0 .. 1] delta 0.01
-int signal_quality.luminance_mean [0 .. 32] delta 2
-								   [32 .. 224] delta 8
-								   [224 .. 255] delta 2
-								   default 72
-int signal_quality.luminance_dev [0 .. 8] delta 1
-								  [8 .. 32] delta 2
-								  [32 .. 64] delta 4
-								  default 48
-int signal_quality.chrominance_U_mean [112 .. 140] 	delta 0.01 default 128
-int signal_quality.chrominance_U_dev [0 ..16] 		delta 0.01 default 8
-int signal_quality.chrominance_V_mean [112 ..140] 	delta 0.01 default 128  
-int signal_quality.chrominance_V_dev [0 ..16] 		delta 0.01 default 8 
-int signal_quality.blur_level [0 .. 100] 			delta 0.20 default 2 
-int signal_quality.static_noise_level [0 .. 100] 	delta 0.20 default 2 
-int signal_quality.dynamic_noise_level [0 .. 100] 	delta 0.20 default 2 
-int signal_quality.frame_instability [0 .. 1] 		delta 0.20 default 2 
-int signal_quality.line_instability [0 .. 1] 		delta 0.20 default 2 
+real signal_quality.luminance_mean [0 .. 255] delta 2 default 72
+real signal_quality.luminance_dev [0 .. 64] delta 1  default 48
+real signal_quality.chrominance_U_mean [0 .. 224] 	delta 0.01 default 128
+real signal_quality.chrominance_U_dev [0 .. 96] 		delta 0.01 default 8
+real signal_quality.chrominance_V_mean [128 .. 190] 	delta 0.01 default 128  
+real signal_quality.chrominance_V_dev [0 .. 36] 		delta 0.01 default 8 
+real signal_quality.blur_level [0 .. 1] 			delta 0.20 default 2 
+real signal_quality.static_noise_level [0 .. 1] 	delta 0.20 default 2 
+real signal_quality.dynamic_noise_level [0 .. 1] 	delta 0.20 default 2 
+real signal_quality.frame_instability [0 .. 1] 		delta 0.20 default 2 
+real signal_quality.line_instability [0 .. 1] 		delta 0.20 default 2 
 real signal_quality.compression_artefact_level [0 .. 1]  delta 0.2 default 2
+
+%Constraints

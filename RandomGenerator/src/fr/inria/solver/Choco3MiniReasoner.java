@@ -2,6 +2,7 @@ package fr.inria.solver;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -19,7 +20,6 @@ import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.VariableFactory;
 
 import fr.inria.domain.Configuration;
-import fr.inria.reader.Node;
 
 public class Choco3MiniReasoner {
 
@@ -34,6 +34,8 @@ public class Choco3MiniReasoner {
 		features = new HashMap<String, Variable>();
 		constraints = new LinkedList<Constraint>();
 		solver = new Solver();
+		this.precision=0.01;
+		solver.setPrecision(precision);
 	}
 
 	public Variable addRealAtribute(String name, Double min, Double max) {
@@ -112,12 +114,9 @@ public class Choco3MiniReasoner {
 		}
 	}
 
-	public void addConstraint(Node<String> tree) {
-
-	}
 
 	public void allSolutions() {
-
+		this.setConstraints();
 		if (solver.findSolution()) {
 			do {
 				Variable[] vars = solver.getVars();
@@ -135,9 +134,56 @@ public class Choco3MiniReasoner {
 	}
 
 	public boolean isValidConf(Configuration conf){
+		this.setConstraints();
 		Collection<Constraint> tmpCons=new LinkedList<Constraint>();
-
+		int name=0;
 		for(Entry<String,Number> pareja:conf.elements.entrySet()){
+			Variable relatedVariable;
+			String key = pareja.getKey();
+			Number value = pareja.getValue();
+			if(key.contains(".")){
+				relatedVariable = atributes.get(key);
+				Constraint c=null;
+				if(relatedVariable instanceof IntVar){
+					c=IntConstraintFactory.arithm((IntVar) relatedVariable,"=",((Double)value).intValue());
+					tmpCons.add(c);
+					solver.post(c);
+				}else if(relatedVariable instanceof RealVar){
+					RealVar real = VariableFactory.real("realAux"+name, ((Double)value).doubleValue(), ((Double)value).doubleValue(),precision,solver);
+					c = new RealConstraint("realAuxCons"+name, "{0}={1}",Ibex.COMPO,(RealVar)relatedVariable,real);
+					name++;
+					tmpCons.add(c);
+					solver.post(c);
+				}
+				
+			}else{
+				relatedVariable = features.get(key);
+				Constraint c=IntConstraintFactory.arithm((IntVar) relatedVariable,"=",(Integer)value);
+				tmpCons.add(c);
+				solver.post(c);
+			}
+			
+		}
+		
+		boolean res =solver.findSolution();
+		
+		for(Constraint c: constraints){
+			solver.unpost(c);
+		}
+		return res;
+	}
+	
+	public boolean isValid(){
+		this.setConstraints();
+		return solver.findSolution();
+	}
+	public boolean isValidConfByStep(Configuration conf){
+		this.setConstraints();
+		Collection<Constraint> tmpCons=new LinkedList<Constraint>();
+		boolean res =true;
+		Iterator<Entry<String, Number>> iterator = conf.elements.entrySet().iterator();
+		while(iterator.hasNext()&&res){
+			Entry<String,Number> pareja=iterator.next();
 			Variable relatedVariable;
 			String key = pareja.getKey();
 			Number value = pareja.getValue();
@@ -159,10 +205,14 @@ public class Choco3MiniReasoner {
 				tmpCons.add(c);
 				solver.post(c);
 			}
-			
+			res =solver.findSolution();
+			if(!res){
+				System.out.println("The constraint "+key+"="+value+"broke the model");
+			}
+			System.out.print(solver.getPrecision());
+
 		}
 		
-		boolean res =solver.findSolution();
 		
 		for(Constraint c: constraints){
 			solver.unpost(c);

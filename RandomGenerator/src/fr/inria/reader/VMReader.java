@@ -135,7 +135,7 @@ public class VMReader {
 	
 	private class ConstraintsParser{
 		
-		int precision=5;
+		double precision=reasoner.precision;
 		
 		public org.chocosolver.solver.constraints.Constraint translateArithmetic(ComplexExpression cex){	
 			org.chocosolver.solver.constraints.Constraint res = null;

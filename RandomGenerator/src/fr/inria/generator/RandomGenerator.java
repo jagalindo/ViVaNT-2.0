@@ -19,7 +19,7 @@ public class RandomGenerator {
 	public static Configuration generateConfiguration(int n) {
 
 		Configuration conf = new Configuration();
-		System.err.println("Generating the configuration " + n);
+	//	System.err.println("Generating the configuration " + n);
 		// Sequence descriptors
 		conf.add("sequence.identifier", n);
 		conf.add("sequence.comment", 0d);
@@ -141,27 +141,27 @@ public class RandomGenerator {
 		}
 
 		if (Math.random() < 0.05) {
-			conf.add("signal_quality.dynamic_noise_level = ", Math.random());
+			conf.add("signal_quality.dynamic_noise_level", Math.random());
 		} else {
-			conf.add("signal_quality.dynamic_noise_level = ", 0d);
+			conf.add("signal_quality.dynamic_noise_level", 0d);
 		}
 
 		if (Math.random() < 0.05) {
-			conf.add("signal_quality.frame_instability = ", Math.random());
+			conf.add("signal_quality.frame_instability", Math.random());
 		} else {
-			conf.add("signal_quality.frame_instability = ", 0d);
+			conf.add("signal_quality.frame_instability", 0d);
 		}
 
 		if (Math.random() < 0.05) {
-			conf.add("signal_quality.line_instability = ", Math.random());
+			conf.add("signal_quality.line_instability", Math.random());
 		} else {
-			conf.add("signal_quality.line_instability = ", 0d);
+			conf.add("signal_quality.line_instability", 0d);
 		}
 
 		if (Math.random() < 0.05) {
-			conf.add("signal_quality.compression_artefact_level = ", Math.random());
+			conf.add("signal_quality.compression_artefact_level", Math.random());
 		} else {
-			conf.add("signal_quality.compression_artefact_level = ", 0d);
+			conf.add("signal_quality.compression_artefact_level", 0d);
 		}
 
 		return conf;
