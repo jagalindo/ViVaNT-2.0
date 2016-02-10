@@ -45,4 +45,8 @@ public class Configuration {
 		this.elements.put(string, d);
 		
 	}
+	public void add(String string, int d) {
+		this.elements.put(string, d);
+		
+	}
 }

@@ -145,11 +145,11 @@ public class Choco3MiniReasoner {
 				relatedVariable = atributes.get(key);
 				Constraint c=null;
 				if(relatedVariable instanceof IntVar){
-					c=IntConstraintFactory.arithm((IntVar) relatedVariable,"=",((Double)value).intValue());
+					c=IntConstraintFactory.arithm((IntVar) relatedVariable,"=",((Number)value).intValue());
 					tmpCons.add(c);
 					solver.post(c);
 				}else if(relatedVariable instanceof RealVar){
-					RealVar real = VariableFactory.real("realAux"+name, ((Double)value).doubleValue(), ((Double)value).doubleValue(),precision,solver);
+					RealVar real = VariableFactory.real("realAux"+name, ((Number)value).doubleValue(), ((Number)value).doubleValue(),precision,solver);
 					c = new RealConstraint("realAuxCons"+name, "{0}={1}",Ibex.COMPO,(RealVar)relatedVariable,real);
 					name++;
 					tmpCons.add(c);
