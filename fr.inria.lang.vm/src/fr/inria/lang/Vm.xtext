@@ -170,7 +170,7 @@ Version:
 		'Constraints:' constraints+=Constraint+;
  
  	Constraint:
-		('constraint' name=ID '=')?
+		('constraint' name=ID '=')? ('not')?
 		expression=SubExpression0;
 
 	SubExpression0 returns ComplexExpression://if then else
@@ -187,6 +187,7 @@ Version:
  
 	SubExpression4 returns ComplexExpression://or
  		SubExpression5 =>({Or.left=current}'||' right=SubExpression5)*;
+ 
  
 	SubExpression5 returns ComplexExpression://and
  		SubExpression6 =>({And.left=current}'&&' right=SubExpression6)*;
@@ -219,7 +220,7 @@ Version:
 		BrackedExpression |
 		StringExpression |
 		SpecialExpression |
-		PrimitiveExpression
+		PrimitiveExpression 
 	;
 
 	SpecialExpression:
