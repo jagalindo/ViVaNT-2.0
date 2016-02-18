@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.ConfigurationsImpl#getConfigurations <em>Configurations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

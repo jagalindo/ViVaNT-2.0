@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.ObjectiveExpression#getOp <em>Op</em>}</li>
  *   <li>{@link fr.inria.lang.vM.ObjectiveExpression#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getObjectiveExpression()
  * @model

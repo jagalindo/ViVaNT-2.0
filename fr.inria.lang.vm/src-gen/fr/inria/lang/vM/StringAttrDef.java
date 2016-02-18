@@ -10,12 +10,12 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.StringAttrDef#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.StringAttrDef#getValue <em>Value</em>}</li>
  *   <li>{@link fr.inria.lang.vM.StringAttrDef#getDefault <em>Default</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getStringAttrDef()
  * @model

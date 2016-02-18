@@ -25,11 +25,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.AttributesImpl#getAttrDefs <em>Attr Defs</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.AttributesImpl#getAttrValuations <em>Attr Valuations</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

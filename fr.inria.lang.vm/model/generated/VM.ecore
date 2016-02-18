@@ -197,6 +197,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Constraint">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="not" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expression" eType="#//ComplexExpression"
         containment="true"/>
   </eClassifiers>
@@ -447,13 +448,13 @@
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Excludes" eSuperTypes="#//ComplexExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ComplexExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
         containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Requires" eSuperTypes="#//ComplexExpression">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//Expression"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="left" eType="#//ComplexExpression"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="right" eType="#//Expression"
         containment="true"/>

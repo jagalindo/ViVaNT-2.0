@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.AttrDef#isNotTranslatable <em>Not Translatable</em>}</li>
  *   <li>{@link fr.inria.lang.vM.AttrDef#isRunTime <em>Run Time</em>}</li>
@@ -18,7 +19,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link fr.inria.lang.vM.AttrDef#getBasicAttrDef <em>Basic Attr Def</em>}</li>
  *   <li>{@link fr.inria.lang.vM.AttrDef#getEnumAttrDef <em>Enum Attr Def</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getAttrDef()
  * @model

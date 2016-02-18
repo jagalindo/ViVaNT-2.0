@@ -10,6 +10,7 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.MetaDataDeclaration#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.MetaDataDeclaration#getVersion <em>Version</em>}</li>
@@ -20,7 +21,6 @@ package fr.inria.lang.vM;
  *   <li>{@link fr.inria.lang.vM.MetaDataDeclaration#getPublication <em>Publication</em>}</li>
  *   <li>{@link fr.inria.lang.vM.MetaDataDeclaration#getDate <em>Date</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getMetaDataDeclaration()
  * @model

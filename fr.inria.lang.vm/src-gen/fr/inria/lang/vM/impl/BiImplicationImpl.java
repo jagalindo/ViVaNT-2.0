@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.BiImplicationImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.BiImplicationImpl#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

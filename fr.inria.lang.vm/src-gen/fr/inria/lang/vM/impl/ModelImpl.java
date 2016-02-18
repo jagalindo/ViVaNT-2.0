@@ -26,10 +26,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.ModelImpl#getBlocks <em>Blocks</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -10,11 +10,11 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.EnumIntegerDef#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.EnumIntegerDef#getDefault <em>Default</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getEnumIntegerDef()
  * @model

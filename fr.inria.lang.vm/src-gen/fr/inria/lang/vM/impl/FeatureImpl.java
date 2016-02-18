@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.FeatureImpl#isNotTranslatable <em>Not Translatable</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.FeatureImpl#isRunTime <em>Run Time</em>}</li>
@@ -26,7 +27,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link fr.inria.lang.vM.impl.FeatureImpl#getMax <em>Max</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.FeatureImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.AdvancedAttrValuationImpl#getAttVsVal <em>Att Vs Val</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.AdvancedAttrValuationImpl#getFeatVsVal <em>Feat Vs Val</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.AdvancedAttrValuationImpl#getAttVsValForMultiFeature <em>Att Vs Val For Multi Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

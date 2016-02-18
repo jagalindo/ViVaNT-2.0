@@ -10,11 +10,11 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Division#getLeft <em>Left</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Division#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getDivision()
  * @model

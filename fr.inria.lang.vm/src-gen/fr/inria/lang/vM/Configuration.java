@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Configuration#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Configuration#getBooleanValuation <em>Boolean Valuation</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Configuration#getExtendedValuation <em>Extended Valuation</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getConfiguration()
  * @model

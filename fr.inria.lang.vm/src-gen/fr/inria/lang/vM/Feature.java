@@ -10,6 +10,7 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Feature#isNotTranslatable <em>Not Translatable</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Feature#isRunTime <em>Run Time</em>}</li>
@@ -19,7 +20,6 @@ package fr.inria.lang.vM;
  *   <li>{@link fr.inria.lang.vM.Feature#getMax <em>Max</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Feature#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getFeature()
  * @model

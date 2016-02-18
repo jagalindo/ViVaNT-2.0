@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.AttHeadImpl#isForAllFeatures <em>For All Features</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.AttHeadImpl#getOwnedFeature <em>Owned Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

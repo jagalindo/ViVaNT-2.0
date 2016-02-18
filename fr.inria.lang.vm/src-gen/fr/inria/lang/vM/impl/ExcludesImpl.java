@@ -2,6 +2,7 @@
  */
 package fr.inria.lang.vM.impl;
 
+import fr.inria.lang.vM.ComplexExpression;
 import fr.inria.lang.vM.Excludes;
 import fr.inria.lang.vM.Expression;
 import fr.inria.lang.vM.VMPackage;
@@ -20,11 +21,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.ExcludesImpl#getLeft <em>Left</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.ExcludesImpl#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -38,7 +39,7 @@ public class ExcludesImpl extends ComplexExpressionImpl implements Excludes
    * @generated
    * @ordered
    */
-  protected Expression left;
+  protected ComplexExpression left;
 
   /**
    * The cached value of the '{@link #getRight() <em>Right</em>}' containment reference.
@@ -76,7 +77,7 @@ public class ExcludesImpl extends ComplexExpressionImpl implements Excludes
    * <!-- end-user-doc -->
    * @generated
    */
-  public Expression getLeft()
+  public ComplexExpression getLeft()
   {
     return left;
   }
@@ -86,9 +87,9 @@ public class ExcludesImpl extends ComplexExpressionImpl implements Excludes
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetLeft(Expression newLeft, NotificationChain msgs)
+  public NotificationChain basicSetLeft(ComplexExpression newLeft, NotificationChain msgs)
   {
-    Expression oldLeft = left;
+    ComplexExpression oldLeft = left;
     left = newLeft;
     if (eNotificationRequired())
     {
@@ -103,7 +104,7 @@ public class ExcludesImpl extends ComplexExpressionImpl implements Excludes
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setLeft(Expression newLeft)
+  public void setLeft(ComplexExpression newLeft)
   {
     if (newLeft != left)
     {
@@ -214,7 +215,7 @@ public class ExcludesImpl extends ComplexExpressionImpl implements Excludes
     switch (featureID)
     {
       case VMPackage.EXCLUDES__LEFT:
-        setLeft((Expression)newValue);
+        setLeft((ComplexExpression)newValue);
         return;
       case VMPackage.EXCLUDES__RIGHT:
         setRight((Expression)newValue);
@@ -234,7 +235,7 @@ public class ExcludesImpl extends ComplexExpressionImpl implements Excludes
     switch (featureID)
     {
       case VMPackage.EXCLUDES__LEFT:
-        setLeft((Expression)null);
+        setLeft((ComplexExpression)null);
         return;
       case VMPackage.EXCLUDES__RIGHT:
         setRight((Expression)null);

@@ -17,12 +17,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.CardinalityBasedImpl#getMin <em>Min</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.CardinalityBasedImpl#getMax <em>Max</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.CardinalityBasedImpl#isAll <em>All</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

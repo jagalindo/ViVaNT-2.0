@@ -24,10 +24,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.RealAttrDefBoundedImpl#getComplement <em>Complement</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

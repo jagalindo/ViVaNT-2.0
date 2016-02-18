@@ -18,11 +18,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.EmailImpl#getUsername <em>Username</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.EmailImpl#getDomain <em>Domain</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

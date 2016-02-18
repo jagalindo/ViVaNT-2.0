@@ -10,11 +10,11 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.SpecialExpression#getOp <em>Op</em>}</li>
  *   <li>{@link fr.inria.lang.vM.SpecialExpression#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getSpecialExpression()
  * @model

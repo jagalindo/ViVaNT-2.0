@@ -10,12 +10,12 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.BooleanAttrDef#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.BooleanAttrDef#getValue <em>Value</em>}</li>
  *   <li>{@link fr.inria.lang.vM.BooleanAttrDef#getDefault <em>Default</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getBooleanAttrDef()
  * @model

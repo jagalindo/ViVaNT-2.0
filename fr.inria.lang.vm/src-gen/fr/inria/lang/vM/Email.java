@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Email#getUsername <em>Username</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Email#getDomain <em>Domain</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getEmail()
  * @model

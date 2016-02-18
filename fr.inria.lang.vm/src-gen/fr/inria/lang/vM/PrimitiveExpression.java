@@ -10,12 +10,12 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.PrimitiveExpression#getFeatureID <em>Feature ID</em>}</li>
  *   <li>{@link fr.inria.lang.vM.PrimitiveExpression#getHead <em>Head</em>}</li>
  *   <li>{@link fr.inria.lang.vM.PrimitiveExpression#getRefAtt <em>Ref Att</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getPrimitiveExpression()
  * @model

@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.BooleanValuation#isNotSelected <em>Not Selected</em>}</li>
  *   <li>{@link fr.inria.lang.vM.BooleanValuation#getFeature <em>Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getBooleanValuation()
  * @model

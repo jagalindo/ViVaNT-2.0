@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.MetaDataDeclarationImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.MetaDataDeclarationImpl#getVersion <em>Version</em>}</li>
@@ -31,7 +32,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link fr.inria.lang.vM.impl.MetaDataDeclarationImpl#getPublication <em>Publication</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.MetaDataDeclarationImpl#getDate <em>Date</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

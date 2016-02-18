@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Attributes#getAttrDefs <em>Attr Defs</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Attributes#getAttrValuations <em>Attr Valuations</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getAttributes()
  * @model

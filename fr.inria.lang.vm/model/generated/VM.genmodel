@@ -3,8 +3,8 @@
     xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/fr.inria.lang.vm/src-gen" editDirectory="/fr.inria.lang.vm.edit/src"
     editorDirectory="/fr.inria.lang.vm.editor/src" modelPluginID="fr.inria.lang.vm"
     forceOverwrite="true" modelName="VM" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    complianceLevel="5.0" copyrightFields="false" editPluginID="fr.inria.lang.vm.edit"
-    editorPluginID="fr.inria.lang.vm.editor" runtimeVersion="2.9">
+    complianceLevel="6.0" copyrightFields="false" editPluginID="fr.inria.lang.vm.edit"
+    editorPluginID="fr.inria.lang.vm.editor" runtimeVersion="2.11">
   <genPackages prefix="VM" basePackage="fr.inria.lang" disposableProviderFactory="true"
       fileExtensions="vm" ecorePackage="VM.ecore#/">
     <genClasses ecoreClass="VM.ecore#//Model">
@@ -167,6 +167,7 @@
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//Constraint">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//Constraint/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute VM.ecore#//Constraint/not"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference VM.ecore#//Constraint/expression"/>
     </genClasses>
     <genClasses ecoreClass="VM.ecore#//ComplexExpression"/>

@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.TableBasedValuationByFeatureAndClone#getRefFeature <em>Ref Feature</em>}</li>
  *   <li>{@link fr.inria.lang.vM.TableBasedValuationByFeatureAndClone#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.TableBasedValuationByFeatureAndClone#getPairs <em>Pairs</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getTableBasedValuationByFeatureAndClone()
  * @model

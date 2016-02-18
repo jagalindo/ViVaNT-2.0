@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.TableBasedValuationByFeatureAndCloneImpl#getRefFeature <em>Ref Feature</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.TableBasedValuationByFeatureAndCloneImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.TableBasedValuationByFeatureAndCloneImpl#getPairs <em>Pairs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

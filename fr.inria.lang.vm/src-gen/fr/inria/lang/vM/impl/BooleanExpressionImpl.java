@@ -20,13 +20,13 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanExpressionImpl#getValue <em>Value</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanExpressionImpl#getOp <em>Op</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanExpressionImpl#getExpression <em>Expression</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanExpressionImpl#getExpression_list <em>Expression list</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

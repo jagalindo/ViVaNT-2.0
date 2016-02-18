@@ -21,11 +21,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.ConstraintImpl#getName <em>Name</em>}</li>
+ *   <li>{@link fr.inria.lang.vM.impl.ConstraintImpl#isNot <em>Not</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.ConstraintImpl#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */
@@ -50,6 +51,26 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #isNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNot()
+   * @generated
+   * @ordered
+   */
+  protected static final boolean NOT_EDEFAULT = false;
+
+  /**
+   * The cached value of the '{@link #isNot() <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #isNot()
+   * @generated
+   * @ordered
+   */
+  protected boolean not = NOT_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getExpression() <em>Expression</em>}' containment reference.
@@ -103,6 +124,29 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, VMPackage.CONSTRAINT__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public boolean isNot()
+  {
+    return not;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setNot(boolean newNot)
+  {
+    boolean oldNot = not;
+    not = newNot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, VMPackage.CONSTRAINT__NOT, oldNot, not));
   }
 
   /**
@@ -181,6 +225,8 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
     {
       case VMPackage.CONSTRAINT__NAME:
         return getName();
+      case VMPackage.CONSTRAINT__NOT:
+        return isNot();
       case VMPackage.CONSTRAINT__EXPRESSION:
         return getExpression();
     }
@@ -199,6 +245,9 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
     {
       case VMPackage.CONSTRAINT__NAME:
         setName((String)newValue);
+        return;
+      case VMPackage.CONSTRAINT__NOT:
+        setNot((Boolean)newValue);
         return;
       case VMPackage.CONSTRAINT__EXPRESSION:
         setExpression((ComplexExpression)newValue);
@@ -220,6 +269,9 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
       case VMPackage.CONSTRAINT__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case VMPackage.CONSTRAINT__NOT:
+        setNot(NOT_EDEFAULT);
+        return;
       case VMPackage.CONSTRAINT__EXPRESSION:
         setExpression((ComplexExpression)null);
         return;
@@ -239,6 +291,8 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
     {
       case VMPackage.CONSTRAINT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case VMPackage.CONSTRAINT__NOT:
+        return not != NOT_EDEFAULT;
       case VMPackage.CONSTRAINT__EXPRESSION:
         return expression != null;
     }
@@ -258,6 +312,8 @@ public class ConstraintImpl extends MinimalEObjectImpl.Container implements Cons
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", not: ");
+    result.append(not);
     result.append(')');
     return result.toString();
   }

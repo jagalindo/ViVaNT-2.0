@@ -20,11 +20,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanValuationImpl#isNotSelected <em>Not Selected</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanValuationImpl#getFeature <em>Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

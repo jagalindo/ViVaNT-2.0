@@ -11,12 +11,12 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.AdvancedAttrValuation#getAttVsVal <em>Att Vs Val</em>}</li>
  *   <li>{@link fr.inria.lang.vM.AdvancedAttrValuation#getFeatVsVal <em>Feat Vs Val</em>}</li>
  *   <li>{@link fr.inria.lang.vM.AdvancedAttrValuation#getAttVsValForMultiFeature <em>Att Vs Val For Multi Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getAdvancedAttrValuation()
  * @model

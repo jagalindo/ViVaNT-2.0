@@ -11,11 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Constraint#getName <em>Name</em>}</li>
+ *   <li>{@link fr.inria.lang.vM.Constraint#isNot <em>Not</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Constraint#getExpression <em>Expression</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getConstraint()
  * @model
@@ -48,6 +49,32 @@ public interface Constraint extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Not</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Not</em>' attribute.
+   * @see #setNot(boolean)
+   * @see fr.inria.lang.vM.VMPackage#getConstraint_Not()
+   * @model
+   * @generated
+   */
+  boolean isNot();
+
+  /**
+   * Sets the value of the '{@link fr.inria.lang.vM.Constraint#isNot <em>Not</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Not</em>' attribute.
+   * @see #isNot()
+   * @generated
+   */
+  void setNot(boolean value);
 
   /**
    * Returns the value of the '<em><b>Expression</b></em>' containment reference.

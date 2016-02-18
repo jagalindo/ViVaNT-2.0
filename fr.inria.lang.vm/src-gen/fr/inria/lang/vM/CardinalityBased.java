@@ -10,12 +10,12 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.CardinalityBased#getMin <em>Min</em>}</li>
  *   <li>{@link fr.inria.lang.vM.CardinalityBased#getMax <em>Max</em>}</li>
  *   <li>{@link fr.inria.lang.vM.CardinalityBased#isAll <em>All</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getCardinalityBased()
  * @model

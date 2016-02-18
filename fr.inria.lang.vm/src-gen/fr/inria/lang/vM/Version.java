@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Version#getMain <em>Main</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Version#getTail <em>Tail</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getVersion()
  * @model

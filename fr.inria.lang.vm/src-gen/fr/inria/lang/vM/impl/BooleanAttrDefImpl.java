@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanAttrDefImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanAttrDefImpl#getValue <em>Value</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.BooleanAttrDefImpl#getDefault <em>Default</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

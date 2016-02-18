@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.AttrDefImpl#isNotTranslatable <em>Not Translatable</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.AttrDefImpl#isRunTime <em>Run Time</em>}</li>
@@ -29,7 +30,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link fr.inria.lang.vM.impl.AttrDefImpl#getBasicAttrDef <em>Basic Attr Def</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.AttrDefImpl#getEnumAttrDef <em>Enum Attr Def</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

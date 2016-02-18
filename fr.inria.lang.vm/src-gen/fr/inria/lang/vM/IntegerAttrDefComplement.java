@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.IntegerAttrDefComplement#getMin <em>Min</em>}</li>
  *   <li>{@link fr.inria.lang.vM.IntegerAttrDefComplement#getMax <em>Max</em>}</li>
  *   <li>{@link fr.inria.lang.vM.IntegerAttrDefComplement#getDelta <em>Delta</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getIntegerAttrDefComplement()
  * @model

@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.If#getLeft <em>Left</em>}</li>
  *   <li>{@link fr.inria.lang.vM.If#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getIf()
  * @model

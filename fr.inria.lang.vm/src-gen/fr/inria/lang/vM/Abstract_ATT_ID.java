@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Abstract_ATT_ID#getHead <em>Head</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Abstract_ATT_ID#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getAbstract_ATT_ID()
  * @model

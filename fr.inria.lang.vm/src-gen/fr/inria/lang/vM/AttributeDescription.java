@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.AttributeDescription#getRefFeat <em>Ref Feat</em>}</li>
  *   <li>{@link fr.inria.lang.vM.AttributeDescription#getRefAtt <em>Ref Att</em>}</li>
  *   <li>{@link fr.inria.lang.vM.AttributeDescription#getDescription <em>Description</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getAttributeDescription()
  * @model

@@ -10,10 +10,10 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.BooleanAttrValuation#getRefAtt <em>Ref Att</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getBooleanAttrValuation()
  * @model

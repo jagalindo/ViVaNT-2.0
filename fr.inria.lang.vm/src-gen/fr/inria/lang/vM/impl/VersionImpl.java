@@ -24,11 +24,11 @@ import org.eclipse.emf.ecore.util.EDataTypeEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.VersionImpl#getMain <em>Main</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.VersionImpl#getTail <em>Tail</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

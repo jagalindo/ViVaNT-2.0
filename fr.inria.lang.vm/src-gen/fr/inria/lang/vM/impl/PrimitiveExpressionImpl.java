@@ -22,12 +22,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.PrimitiveExpressionImpl#getFeatureID <em>Feature ID</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.PrimitiveExpressionImpl#getHead <em>Head</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.PrimitiveExpressionImpl#getRefAtt <em>Ref Att</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

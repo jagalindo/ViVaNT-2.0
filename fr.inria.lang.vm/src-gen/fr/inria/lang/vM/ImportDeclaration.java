@@ -10,10 +10,10 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.ImportDeclaration#getImportedNamespace <em>Imported Namespace</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getImportDeclaration()
  * @model

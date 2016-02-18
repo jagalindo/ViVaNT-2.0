@@ -29,12 +29,12 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.ConfigurationImpl#getName <em>Name</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.ConfigurationImpl#getBooleanValuation <em>Boolean Valuation</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.ConfigurationImpl#getExtendedValuation <em>Extended Valuation</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

@@ -21,12 +21,12 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.RealAttrDefComplementImpl#getMin <em>Min</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.RealAttrDefComplementImpl#getMax <em>Max</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.RealAttrDefComplementImpl#getDelta <em>Delta</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

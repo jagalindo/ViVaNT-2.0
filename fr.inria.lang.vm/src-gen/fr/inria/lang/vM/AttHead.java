@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.AttHead#isForAllFeatures <em>For All Features</em>}</li>
  *   <li>{@link fr.inria.lang.vM.AttHead#getOwnedFeature <em>Owned Feature</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getAttHead()
  * @model

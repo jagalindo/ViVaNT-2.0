@@ -170,7 +170,7 @@ Version:
 		'Constraints:' constraints+=Constraint+;
  
  	Constraint:
-		('constraint' name=ID '=')? ('not')?
+		('constraint' name=ID '=')? (not?='not')?
 		expression=SubExpression0;
 
 	SubExpression0 returns ComplexExpression://if then else

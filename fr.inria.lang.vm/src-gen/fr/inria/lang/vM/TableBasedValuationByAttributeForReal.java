@@ -11,11 +11,11 @@ import org.eclipse.emf.common.util.EList;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.TableBasedValuationByAttributeForReal#getRefAtt <em>Ref Att</em>}</li>
  *   <li>{@link fr.inria.lang.vM.TableBasedValuationByAttributeForReal#getPairs <em>Pairs</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getTableBasedValuationByAttributeForReal()
  * @model

@@ -21,11 +21,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.Abstract_ATT_IDImpl#getHead <em>Head</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.Abstract_ATT_IDImpl#getName <em>Name</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

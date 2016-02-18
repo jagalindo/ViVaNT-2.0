@@ -1711,13 +1711,22 @@ public interface VMPackage extends EPackage
   int CONSTRAINT__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Not</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINT__NOT = 1;
+
+  /**
    * The feature id for the '<em><b>Expression</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT__EXPRESSION = 1;
+  int CONSTRAINT__EXPRESSION = 2;
 
   /**
    * The number of structural features of the '<em>Constraint</em>' class.
@@ -1726,7 +1735,7 @@ public interface VMPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_FEATURE_COUNT = 2;
+  int CONSTRAINT_FEATURE_COUNT = 3;
 
   /**
    * The meta object id for the '{@link fr.inria.lang.vM.impl.ComplexExpressionImpl <em>Complex Expression</em>}' class.
@@ -5177,6 +5186,17 @@ public interface VMPackage extends EPackage
   EAttribute getConstraint_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link fr.inria.lang.vM.Constraint#isNot <em>Not</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Not</em>'.
+   * @see fr.inria.lang.vM.Constraint#isNot()
+   * @see #getConstraint()
+   * @generated
+   */
+  EAttribute getConstraint_Not();
+
+  /**
    * Returns the meta object for the containment reference '{@link fr.inria.lang.vM.Constraint#getExpression <em>Expression</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -7882,6 +7902,14 @@ public interface VMPackage extends EPackage
      * @generated
      */
     EAttribute CONSTRAINT__NAME = eINSTANCE.getConstraint_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Not</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSTRAINT__NOT = eINSTANCE.getConstraint_Not();
 
     /**
      * The meta object literal for the '<em><b>Expression</b></em>' containment reference feature.

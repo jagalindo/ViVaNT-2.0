@@ -10,13 +10,13 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.NumericExpression#getValue <em>Value</em>}</li>
  *   <li>{@link fr.inria.lang.vM.NumericExpression#getOp <em>Op</em>}</li>
  *   <li>{@link fr.inria.lang.vM.NumericExpression#getExpression <em>Expression</em>}</li>
  *   <li>{@link fr.inria.lang.vM.NumericExpression#getExpression_list <em>Expression list</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getNumericExpression()
  * @model

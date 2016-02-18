@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.impl.TableBasedValuationByAttributeForIntegerImpl#getRefAtt <em>Ref Att</em>}</li>
  *   <li>{@link fr.inria.lang.vM.impl.TableBasedValuationByAttributeForIntegerImpl#getPairs <em>Pairs</em>}</li>
  * </ul>
- * </p>
  *
  * @generated
  */

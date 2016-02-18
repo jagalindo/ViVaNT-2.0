@@ -10,11 +10,11 @@ package fr.inria.lang.vM;
  *
  * <p>
  * The following features are supported:
+ * </p>
  * <ul>
  *   <li>{@link fr.inria.lang.vM.Excludes#getLeft <em>Left</em>}</li>
  *   <li>{@link fr.inria.lang.vM.Excludes#getRight <em>Right</em>}</li>
  * </ul>
- * </p>
  *
  * @see fr.inria.lang.vM.VMPackage#getExcludes()
  * @model
@@ -31,12 +31,12 @@ public interface Excludes extends ComplexExpression
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Left</em>' containment reference.
-   * @see #setLeft(Expression)
+   * @see #setLeft(ComplexExpression)
    * @see fr.inria.lang.vM.VMPackage#getExcludes_Left()
    * @model containment="true"
    * @generated
    */
-  Expression getLeft();
+  ComplexExpression getLeft();
 
   /**
    * Sets the value of the '{@link fr.inria.lang.vM.Excludes#getLeft <em>Left</em>}' containment reference.
@@ -46,7 +46,7 @@ public interface Excludes extends ComplexExpression
    * @see #getLeft()
    * @generated
    */
-  void setLeft(Expression value);
+  void setLeft(ComplexExpression value);
 
   /**
    * Returns the value of the '<em><b>Right</b></em>' containment reference.
