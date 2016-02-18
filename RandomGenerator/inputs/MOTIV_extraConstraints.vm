@@ -141,8 +141,8 @@ real signal_quality.line_instability [0.0 .. 1.0] 		delta 0.20 default 0.0
 real signal_quality.compression_artefact_level [0.0 .. 1.0]  delta 0.2 default 0.0
 
 Constraints:
-not(signal_quality.dynamic_noise_level<= 0.262621 && signal_quality.blur_level<= 0 && capture.illumination_level<= 0.696428 && signal_quality.compression_artefact_level> 0.460402)
-not(signal_quality.dynamic_noise_level<= 0.262621 && signal_quality.blur_level> 0)
-not(signal_quality.dynamic_noise_level> 0.262621 && capture.heat_haze_level<= 0.034713 && signal_quality.dynamic_noise_level<= 0.770088 && capture.illumination_level<= 0.579381)
-not(signal_quality.dynamic_noise_level> 0.262621 && capture.heat_haze_level<= 0.034713 && signal_quality.dynamic_noise_level> 0.770088)
-not(signal_quality.dynamic_noise_level> 0.262621 && capture.heat_haze_level> 0.034713)
+signal_quality.dynamic_noise_level> 0.262621 || signal_quality.blur_level> 0 || capture.illumination_level> 0.696428 || signal_quality.compression_artefact_level<= 0.460402
+signal_quality.dynamic_noise_level> 0.262621 || signal_quality.blur_level<= 0
+signal_quality.dynamic_noise_level<= 0.262621 || capture.heat_haze_level> 0.034713 || signal_quality.dynamic_noise_level> 0.770088 || capture.illumination_level> 0.579381
+signal_quality.dynamic_noise_level<= 0.262621 || capture.heat_haze_level> 0.034713 || signal_quality.dynamic_noise_level<= 0.770088
+signal_quality.dynamic_noise_level<= 0.262621 || capture.heat_haze_level<= 0.034713

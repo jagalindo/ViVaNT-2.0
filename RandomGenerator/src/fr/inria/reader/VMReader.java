@@ -383,6 +383,7 @@ public class VMReader {
 				c = LogicalConstraintFactory.not(c);
 			}
 			reasoner.constraints.add(c);
+		//	System.out.println(c);
 			reasoner.solver.post(c);
 		}
 	}
