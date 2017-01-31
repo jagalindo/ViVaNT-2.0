@@ -12,7 +12,6 @@ import org.chocosolver.solver.variables.IntVar;
 import org.chocosolver.solver.variables.RealVar;
 import org.chocosolver.solver.variables.Variable;
 import org.chocosolver.solver.variables.VariableFactory;
-import org.chocosolver.solver.variables.impl.RealVarImpl;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -77,6 +76,8 @@ public class VMReader {
 
 	Collection<String> models = null;
 	public Choco3MiniReasoner reasoner = new Choco3MiniReasoner();
+	
+	
 	int precision =0;
 	public void parseFile(String fileName) throws Exception {
 		Injector injector = new VMStandaloneSetup().createInjectorAndDoEMFRegistration();
@@ -201,7 +202,6 @@ public class VMReader {
 			if(translateArithmetic(cex)!=null){
 				return translateArithmetic(cex).reif();
 			}
-			
 			if (cex instanceof NumericExpression) {
 //				System.err.println("Numeric Expressions are not yet implemented");
 				String value=((NumericExpression)cex).getValue();
@@ -284,26 +284,22 @@ public class VMReader {
 				}else if(e1 instanceof IntVar &&e2 instanceof IntVar){
 					res = IntConstraintFactory.arithm((IntVar) e1, "<", (IntVar) e2);
 				}else if(e1 instanceof IntVar &&e2 instanceof RealVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e1, this.precision);
-					res = new RealConstraint("", "{0}<{1}",Ibex.COMPO,(RealVar)e2,realconverted);				
+					//res = new IntRealConstraint((IntVar) e1, (RealVar)e2, presicion);
 				}else if(e1 instanceof RealVar &&e2 instanceof IntVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e2, this.precision);
-					res = new RealConstraint("", "{0}<{1}",Ibex.COMPO,realconverted,(RealVar)e2);				
+					//res = new IntEqRealConstraint((IntVar) e2, (RealVar)e1, presicion);
 				}
 		
-			} else if (cex instanceof Lessequal) {//el problema es que este hombre metio lessequal y less como subtipos.
-				Variable e1 =translateInteger(((Lessequal) cex).getLeft().getLeft());
+			} else if (cex instanceof Lessequal) {
+				Variable e1 =translateInteger(((Lessequal) cex).getLeft());
 				Variable e2= translateInteger(((Lessequal) cex).getRight());
 				if(e1 instanceof RealVar &&e2 instanceof RealVar){
 					res = new RealConstraint("", "{0}<={1}",Ibex.COMPO,(RealVar)e1,(RealVar)e2);
 				}else if(e1 instanceof IntVar &&e2 instanceof IntVar){
 					res = IntConstraintFactory.arithm((IntVar) e1, "<=", (IntVar) e2);
 				}else if(e1 instanceof IntVar &&e2 instanceof RealVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e1, this.precision);
-					res = new RealConstraint("", "{0}<={1}",Ibex.COMPO,realconverted,(RealVar)e2);				
+					//res = new IntRealConstraint((IntVar) e1, (RealVar)e2, presicion);
 				}else if(e1 instanceof RealVar &&e2 instanceof IntVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e2, this.precision);
-					res = new RealConstraint("", "{0}<={1}",Ibex.COMPO,(RealVar)e1,realconverted);				
+					//res = new IntEqRealConstraint((IntVar) e2, (RealVar)e1, presicion);
 				}
 		
 			} else if (cex instanceof Greater) {
@@ -314,26 +310,22 @@ public class VMReader {
 				}else if(e1 instanceof IntVar &&e2 instanceof IntVar){
 					res = IntConstraintFactory.arithm((IntVar) e1, ">", (IntVar) e2);
 				}else if(e1 instanceof IntVar &&e2 instanceof RealVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e1, this.precision);
-					res = new RealConstraint("", "{0}>{1}",Ibex.COMPO,realconverted,(RealVar)e2);
+					//res = new IntRealConstraint((IntVar) e1, (RealVar)e2, presicion);
 				}else if(e1 instanceof RealVar &&e2 instanceof IntVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e2, this.precision);
-					res = new RealConstraint("", "{0}>{1}",Ibex.COMPO,(RealVar)e1,realconverted);
+					//res = new IntEqRealConstraint((IntVar) e2, (RealVar)e1, presicion);
 				}
 		
 			} else if (cex instanceof Greaterequal) {
-				Variable e1 =translateInteger(((Greaterequal) cex).getLeft().getLeft());
+				Variable e1 =translateInteger(((Greaterequal) cex).getLeft());
 				Variable e2= translateInteger(((Greaterequal) cex).getRight());
 				if(e1 instanceof RealVar &&e2 instanceof RealVar){
 					res = new RealConstraint("", "{0}>={1}",Ibex.COMPO,(RealVar)e1,(RealVar)e2);
 				}else if(e1 instanceof IntVar &&e2 instanceof IntVar){
 					res = IntConstraintFactory.arithm((IntVar) e1, ">=", (IntVar) e2);
 				}else if(e1 instanceof IntVar &&e2 instanceof RealVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e1, this.precision);
-					res = new RealConstraint("", "{0}>={1}",Ibex.COMPO,realconverted,(RealVar)e2);
+					//res = new IntRealConstraint((IntVar) e1, (RealVar)e2, presicion);
 				}else if(e1 instanceof RealVar &&e2 instanceof IntVar){
-					RealVar realconverted = VariableFactory.real((IntVar) e2, this.precision);
-					res = new RealConstraint("", "{0}>={1}",Ibex.COMPO,(RealVar)e1,realconverted);
+					//res = new IntEqRealConstraint((IntVar) e2, (RealVar)e1, presicion);
 				}
 				
 			}
@@ -355,7 +347,7 @@ public class VMReader {
 			} else if (cex instanceof Or) {
 				c=LogicalConstraintFactory.or(translateLogical(((Or) cex).getLeft()),translateLogical(((Or) cex).getRight()));
 			} else if (cex instanceof And) {
-				c=LogicalConstraintFactory.and(translateLogical(((And) cex).getLeft()),translateLogical(((And) cex).getRight()));
+				c=LogicalConstraintFactory.and(translateLogical(((Or) cex).getLeft()),translateLogical(((Or) cex).getRight()));
 			} else if (cex instanceof Excludes) {
 				c=LogicalConstraintFactory.ifThen_reifiable(translateLogical(((RightImplication) cex).getLeft()), LogicalConstraintFactory.not(translateLogical(((RightImplication) cex).getRight())));
 			} else if (cex instanceof Requires) {
@@ -378,12 +370,8 @@ public class VMReader {
 	private void visitConstraints(EList<Constraint> con) {
 		ConstraintsParser parser = new ConstraintsParser();
 		for (Constraint co : con) {
-			org.chocosolver.solver.constraints.Constraint c=parser.translateLogical((ComplexExpression) co.getExpression());;
-			if(co.isNot()){
-				c = LogicalConstraintFactory.not(c);
-			}
+			org.chocosolver.solver.constraints.Constraint c = parser.translateLogical((ComplexExpression) co.getExpression());
 			reasoner.constraints.add(c);
-		//	System.out.println(c);
 			reasoner.solver.post(c);
 		}
 	}
@@ -470,7 +458,7 @@ public class VMReader {
 			if (fd instanceof FeaturesGroup) {
 				FeaturesGroup group = (FeaturesGroup) fd;
 				EList<FeatureDefinition> groupedFeatures = group.getGroupedFeatures();
-				LinkedList<Variable> childs= new LinkedList<>();
+				LinkedList<Variable> childs= new LinkedList<Variable>();
 				for (FeatureDefinition fdef : groupedFeatures) {
 
 					if (fdef instanceof Feature) {
